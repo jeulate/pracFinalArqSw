@@ -3,6 +3,7 @@ import FactoryExample.PagoFactory;
 import FactoryExample.TipoDePago;
 import examen.plantilla.Cuadrado;
 import examen.plantilla.SerieSumaCuadrados;
+import examen.plantilla.Seriedos;
 import observer.Ejemplo1Observer;
 import observer.Ejemplo2Observer;
 import observer.Ejemplo3Observer;
@@ -10,14 +11,18 @@ import observer.EjemploObservable;
 
 public class Main {
     public static void main(String[] args) throws NoSuchFieldException {
-        int n = 5;
+        int n = 9;
         Cuadrado cuadrado = new Cuadrado();
         String resultadocuadrado = cuadrado.generarSerie(n);
         System.out.println("Cuadrados: "+ resultadocuadrado);
 
-        SerieSumaCuadrados serieSumaCuadrados = new SerieSumaCuadrados();
-        String resultado = serieSumaCuadrados.generarSerie(n);
-        System.out.println("Serie Cuadrados: "+ resultado);
+        Seriedos seriedos = new Seriedos();
+        String resultado = seriedos.generarSerie(n);
+        System.out.println("Serie 10: " + resultado);
+
+//        SerieSumaCuadrados serieSumaCuadrados = new SerieSumaCuadrados();
+//        String resultado = serieSumaCuadrados.generarSerie(n);
+//        System.out.println("Serie Cuadrados: "+ resultado);
 
 //       PagoFactory pagoFactory = new PagoFactory();
 //       Pago pago = pagoFactory.obtenerPago(TipoDePago.BITCOIN);
