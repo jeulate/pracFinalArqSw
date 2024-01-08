@@ -13,13 +13,13 @@ public class FarmaciaDAO {
     public boolean agregarProducto(Producto nuevoProducto) {
         try (Connection conexion = DriverManager.getConnection(URL, USUARIO, CONTRASENA)) {
             // Query para insertar un nuevo producto en la tabla Producto
-            String query = "INSERT INTO Producto (Codigo, Nombre, Precio) VALUES (?, ?, ?)";
+            String query = "INSERT INTO Producto (Codigo, Nombre, Precio) VALUES (?, ?, ?, ?)";
 
             try (PreparedStatement statement = conexion.prepareStatement(query)) {
                 statement.setInt(1, nuevoProducto.getCodigo());
                 statement.setString(2, nuevoProducto.getNombre());
                 statement.setDouble(3, nuevoProducto.getPrecio());
-               // statement.setInt(4, nuevoProducto.getTipoProducto().getId());
+               statement.setInt(4, nuevoProducto.getTipoProducto().getId());
 
                 // Ejecutar la actualización
                 int filasAfectadas = statement.executeUpdate();
